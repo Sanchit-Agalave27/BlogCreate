@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create Blog
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <h1>Create Blog</h1>
+
+    <form method="POST">
+
+        <input
+        type="text"
+        name="title"
+        placeholder="Blog Title"
+        required>
+
+        <input
+        type="text"
+        name="author"
+        placeholder="Author Name"
+        required>
+
+        <textarea
+        name="content"
+        placeholder="Write your story..."
+        required></textarea>
+
+        <button type="submit">
+            Publish Blog
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

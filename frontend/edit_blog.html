@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Blog
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <h1>Edit Blog</h1>
+
+    <form method="POST">
+
+        <input
+        type="text"
+        name="title"
+        value="{{ blog.title }}"
+        required>
+
+        <input
+        type="text"
+        name="author"
+        value="{{ blog.author }}"
+        required>
+
+        <textarea
+        name="content"
+        required>{{ blog.content }}</textarea>
+
+        <button type="submit">
+            Update Blog
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
