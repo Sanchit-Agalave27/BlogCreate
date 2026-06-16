@@ -1,24 +1,37 @@
 {% extends "base.html" %}
 
 {% block title %}
-Blog Home
+Home
 {% endblock %}
 
 {% block content %}
 
 <section class="hero">
 
-    <h1>Write. Share. Inspire.</h1>
+    <h1>
+        Stories Worth Sharing
+    </h1>
 
     <p>
-        A modern blogging platform powered by FastAPI.
+        Create beautiful blogs with images and rich content.
     </p>
 
-    <a href="/create" class="hero-btn">
-        Create New Blog
-    </a>
-
 </section>
+
+<form method="GET"
+      class="search-form">
+
+    <input
+        type="text"
+        name="search"
+        value="{{ search }}"
+        placeholder="Search blogs by title">
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
 
 <div class="blog-grid">
 
@@ -26,45 +39,88 @@ Blog Home
 
 <div class="blog-card">
 
-    <h2>{{ blog.title }}</h2>
+    {% if blog.image_path %}
+
+    <img
+        src="/uploads/{{ blog.image_path }}"
+        class="blog-image">
+
+    {% endif %}
+
+    <h2>
+        {{ blog.title }}
+    </h2>
 
     <div class="author">
-        By {{ blog.author }}
+
+        ✍️ {{ blog.author }}
+
+    </div>
+
+    <div class="date">
+
+        {{ blog.created_at.strftime("%d %b %Y") }}
+
     </div>
 
     <p>
-        {{ blog.content[:180] }}...
+
+        {{ blog.content[:150] }}...
+
     </p>
 
     <div class="card-actions">
 
-        <a href="/blog/{{ blog.id }}" class="read-btn">
+        <a href="/blog/{{ blog.id }}"
+           class="read-btn">
+
             Read
+
         </a>
 
-        <a href="/edit/{{ blog.id }}" class="edit-btn">
+        <a href="/edit/{{ blog.id }}"
+           class="edit-btn">
+
             Edit
+
         </a>
 
-        <a href="/delete/{{ blog.id }}" class="delete-btn">
+        <a href="/delete/{{ blog.id }}"
+           class="delete-btn">
+
             Delete
+
         </a>
 
     </div>
 
 </div>
 
-{% else %}
-
-<div class="empty-state">
-
-    <h2>No Blogs Yet</h2>
-
-    <p>Create your first blog post.</p>
+{% endfor %}
 
 </div>
 
-{% endfor %}
+<div class="pagination">
+
+    {% if page > 1 %}
+
+    <a href="/?search={{ search }}&page={{ page-1 }}">
+        Previous
+    </a>
+
+    {% endif %}
+
+    <span>
+        Page {{ page }} of {{ pages }}
+    </span>
+
+    {% if page < pages %}
+
+    <a href="/?search={{ search }}&page={{ page+1 }}">
+        Next
+    </a>
+
+    {% endif %}
 
 </div>
 

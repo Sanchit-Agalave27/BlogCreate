@@ -10,27 +10,37 @@ Create Blog
 
     <h1>Create Blog</h1>
 
-    <form method="POST">
+    <form
+        method="POST"
+        enctype="multipart/form-data">
 
         <input
-        type="text"
-        name="title"
-        placeholder="Blog Title"
-        required>
+            type="text"
+            name="title"
+            placeholder="Blog Title"
+            required>
 
         <input
-        type="text"
-        name="author"
-        placeholder="Author Name"
-        required>
+            type="text"
+            name="author"
+            placeholder="Author Name"
+            required>
+
+        <input
+            type="file"
+            name="image"
+            accept="image/*"
+            required>
 
         <textarea
-        name="content"
-        placeholder="Write your story..."
-        required></textarea>
+            name="content"
+            placeholder="Write your story..."
+            required></textarea>
 
         <button type="submit">
+
             Publish Blog
+
         </button>
 
     </form>

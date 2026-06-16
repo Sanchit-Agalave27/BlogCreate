@@ -1,40 +1,78 @@
-# 🚀 FastAPI Blog CRUD Application
+# 🚀 BlogCreate - FastAPI Blog Platform
 
-A modern Blog Management System built with **FastAPI**, **SQLAlchemy**, **SQLite**, and **Jinja2 Templates**. This project demonstrates complete CRUD (Create, Read, Update, Delete) operations with a clean and responsive user interface.
+A modern full-stack blogging platform built with **FastAPI**, **SQLAlchemy**, **SQLite**, and **Jinja2**.
 
-## ✨ Features
-
-* Create new blog posts
-* View all blog posts
-* Read individual blog articles
-* Edit existing blogs
-* Delete blogs
-* SQLite database integration
-* SQLAlchemy ORM
-* Jinja2 template rendering
-* Responsive modern UI
-* Glassmorphism-inspired design
+BlogSpace allows users to create, edit, search, and manage blog posts with image uploads, pagination, and a modern Black + Emerald user interface.
 
 ---
 
-## 🛠️ Tech Stack
+# ✨ Features
 
-### Backend
+### 📝 Blog Management
+
+* Create blog posts
+* Edit existing blogs
+* Delete blogs
+* Read full blog articles
+* View all blog posts
+
+### 🖼 Media Support
+
+* Upload images for blogs
+* Automatic image display on blog cards
+* Featured image support on blog pages
+
+### 🔍 Search
+
+* Search blogs by title
+* Instant filtering through query parameters
+
+### 📄 Pagination
+
+* Paginated blog listing
+* Improved browsing experience
+* Faster page loading
+
+### 📅 Post Metadata
+
+* Automatic created date
+* Author information
+
+### 🎨 Modern UI
+
+* Black + Emerald color theme
+* Responsive design
+* Glassmorphism-inspired cards
+* Mobile-friendly layout
+* Smooth hover animations
+
+---
+
+# 🛠 Tech Stack
+
+## Backend
 
 * FastAPI
 * SQLAlchemy
 * SQLite
 * Python
 
-### Frontend
+## Frontend
 
 * HTML5
 * CSS3
 * Jinja2 Templates
 
+## Additional Features
+
+* Static File Serving
+* Image Upload Handling
+* Pagination Logic
+* Search Functionality
+
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```text
 BlogCreate/
@@ -42,6 +80,9 @@ BlogCreate/
 ├── backend.py
 ├── requirements.txt
 ├── blog.db
+│
+├── uploads/
+│   └── uploaded_images
 │
 ├── frontend/
 │   ├── base.html
@@ -57,36 +98,36 @@ BlogCreate/
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### 1. Clone the repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/Sanchit-Agalave27/BlogCreate.git
 cd BlogCreate
 ```
 
-### 2. Create a virtual environment
+---
+
+## Create Virtual Environment
+
+### Windows
 
 ```bash
 python -m venv venv
-```
-
-### 3. Activate the virtual environment
-
-#### Windows
-
-```bash
 venv\Scripts\activate
 ```
 
-#### macOS/Linux
+### Linux / macOS
 
 ```bash
+python -m venv venv
 source venv/bin/activate
 ```
 
-### 4. Install dependencies
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -94,13 +135,26 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run the Application
+# 📦 Requirements
+
+```txt
+fastapi==0.116.1
+uvicorn==0.35.0
+jinja2==3.1.6
+sqlalchemy==2.0.43
+python-multipart==0.0.20
+pillow==10.4.0
+```
+
+---
+
+# ▶️ Run the Application
 
 ```bash
 uvicorn backend:app --reload
 ```
 
-Open your browser and visit:
+Open:
 
 ```text
 http://127.0.0.1:8000
@@ -108,27 +162,23 @@ http://127.0.0.1:8000
 
 ---
 
-## 📌 Available Routes
+# 📌 Available Routes
 
-| Route          | Method | Description         |
-| -------------- | ------ | ------------------- |
-| `/`            | GET    | View all blogs      |
-| `/create`      | GET    | Create blog page    |
-| `/create`      | POST   | Create a new blog   |
-| `/blog/{id}`   | GET    | View a blog         |
-| `/edit/{id}`   | GET    | Edit blog page      |
-| `/edit/{id}`   | POST   | Update blog         |
-| `/delete/{id}` | GET    | Delete confirmation |
-| `/delete/{id}` | POST   | Delete blog         |
-| `/test`        | GET    | API test route      |
+| Route        | Method | Description         |
+| ------------ | ------ | ------------------- |
+| /            | GET    | Home Page           |
+| /create      | GET    | Create Blog Page    |
+| /create      | POST   | Create Blog         |
+| /blog/{id}   | GET    | View Blog           |
+| /edit/{id}   | GET    | Edit Blog Page      |
+| /edit/{id}   | POST   | Update Blog         |
+| /delete/{id} | GET    | Delete Confirmation |
+| /delete/{id} | POST   | Delete Blog         |
+| /test        | GET    | API Test Route      |
 
 ---
 
-## 🗄️ Database
-
-The application uses SQLite as the database and SQLAlchemy as the ORM.
-
-### Blog Model
+# 🗄 Database Model
 
 ```python
 class Blog(Base):
@@ -138,33 +188,70 @@ class Blog(Base):
     title: str
     author: str
     content: str
+    image_path: str
+    created_at: datetime
 ```
 
 ---
 
-## 🎯 Learning Objectives
+# 🔥 Highlights
+
+* Image Upload Support
+* Search Functionality
+* Pagination System
+* Responsive Design
+* Dark Theme UI
+* SQLite Database
+* SQLAlchemy ORM
+* FastAPI Backend
+* Jinja2 Templating
+
+---
+
+# 🚀 Deployment
+
+This project can be deployed on:
+
+* Render
+* Railway
+* Fly.io
+* VPS Servers
+* Docker Containers
+
+Example:
+
+```bash
+uvicorn backend:app --host 0.0.0.0 --port $PORT
+```
+
+---
+
+# 🎯 Learning Outcomes
 
 This project demonstrates:
 
-* FastAPI fundamentals
-* CRUD operations
+* FastAPI Fundamentals
+* CRUD Operations
 * SQLAlchemy ORM
-* SQLite database integration
+* SQLite Integration
 * Dependency Injection
-* Jinja2 Templates
-* Static file handling
-* Responsive frontend development
+* File Upload Handling
+* Static File Serving
+* Search Implementation
+* Pagination Implementation
+* Template Rendering with Jinja2
+* Responsive UI Design
 
 ---
 
-## 📜 License
+# 👨‍💻 Author
 
-This project is open-source and available for educational and personal use.
+Sanchit Agalave
+
+GitHub:
+https://github.com/Sanchit-Agalave27
 
 ---
 
-## 👨‍💻 Author
+⭐ If you found this project useful, consider starring the repository.
 
-**Sanchit Agalave**
-
-GitHub: https://github.com/Sanchit-Agalave27

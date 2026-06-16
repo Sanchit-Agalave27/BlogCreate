@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>{% block title %}BlogSpace{% endblock %}</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/static/style.css">
+    <title>
+        {% block title %}
+        BlogSpace
+        {% endblock %}
+    </title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
 </head>
+
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<nav class="navbar">
+    <nav class="navbar">
 
-    <a href="/" class="logo">
-        ✨ BlogSpace
-    </a>
+        <a href="/" class="logo">
+            🔥 BlogSpace
+        </a>
 
-    <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/create">Create Blog</a>
-    </div>
+        <div class="nav-links">
 
-</nav>
+            <a href="/">
+                Home
+            </a>
 
-<div class="container">
+            <a href="/create">
+                Create Blog
+            </a>
 
-    {% block content %}
-    {% endblock %}
+        </div>
 
-</div>
+    </nav>
+
+    <main class="container">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
 
 </body>
+
 </html>

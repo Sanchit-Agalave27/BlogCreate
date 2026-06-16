@@ -10,26 +10,35 @@ Edit Blog
 
     <h1>Edit Blog</h1>
 
-    <form method="POST">
+    <form
+        method="POST"
+        enctype="multipart/form-data">
 
         <input
-        type="text"
-        name="title"
-        value="{{ blog.title }}"
-        required>
+            type="text"
+            name="title"
+            value="{{ blog.title }}"
+            required>
 
         <input
-        type="text"
-        name="author"
-        value="{{ blog.author }}"
-        required>
+            type="text"
+            name="author"
+            value="{{ blog.author }}"
+            required>
+
+        <input
+            type="file"
+            name="image"
+            accept="image/*">
 
         <textarea
-        name="content"
-        required>{{ blog.content }}</textarea>
+            name="content"
+            required>{{ blog.content }}</textarea>
 
         <button type="submit">
+
             Update Blog
+
         </button>
 
     </form>
