@@ -8,7 +8,7 @@ A modern blogging platform built using **FastAPI**, **SQLAlchemy**, **SQLite**, 
 
 **Deployed Application**
 
-https://blogcreate-27uk.onrender.com
+https://blogcreate-cv3k.onrender.com
 
 ---
 
@@ -262,7 +262,7 @@ Project Repository:
 https://github.com/Sanchit-Agalave27/BlogCreate
 
 Live Demo:
-https://blogcreate-27uk.onrender.com
+https://blogcreate-cv3k.onrender.com
 
 ---
 
